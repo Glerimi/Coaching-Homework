@@ -1,6 +1,8 @@
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 
 export interface DatabasePlayer {
   id: number;
@@ -12,7 +14,7 @@ export interface DatabasePlayer {
 
 @Injectable({ providedIn: 'root' })
 export class PlayerService {
-  private readonly apiUrl = 'http://localhost:8080/api/db/players';
+  private readonly apiUrl = `${environment.apiUrl}/db/players`;
 
   constructor(private http: HttpClient) {}
 

@@ -20,7 +20,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/db/players")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+        "http://localhost:4200",
+        "https://DEINE-NETLIFY-SEITE.netlify.app"
+})
 public class PlayerController {
     private final PlayerService playerService;
 
