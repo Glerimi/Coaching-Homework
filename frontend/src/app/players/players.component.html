@@ -1,0 +1,17 @@
+<section class="database-section">
+  <div class="section-heading">
+    <span>Database Feature</span>
+    <h2>Players from PostgreSQL</h2>
+    <p>This list is loaded from the Spring Boot controller through the Angular service.</p>
+  </div>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <div class="db-grid" *ngIf="players.length > 0">
+    <article class="db-card" *ngFor="let player of players">
+      <strong>#{{ player.jerseyNumber }} {{ player.name }}</strong>
+      <small>{{ player.position }}</small>
+      <span>{{ player.status }}</span>
+    </article>
+  </div>
+</section>

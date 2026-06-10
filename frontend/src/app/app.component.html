@@ -1,0 +1,32 @@
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><h1>Basketball<br>Analytics</h1><span>‹</span></div>
+    <nav class="nav">
+      <button [class.active]="page==='dashboard'" (click)="page='dashboard'">⌂ Dashboard</button>
+      <button [class.active]="page==='players'" (click)="page='players'">♙ Players</button>
+      <button>▣ Training Sessions</button><button>▥ Drill Library</button>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="topbar"><span>April 5, 2026</span><span>♙</span><span>↪</span></header>
+    <section class="content" *ngIf="page==='dashboard'">
+      <h1 class="title">Performance Dashboard</h1>
+      <div class="cards">
+        <div class="card stat"><div class="label">Active Players</div><div class="number">{{stats.activePlayers}}</div></div>
+        <div class="card stat"><div class="label">Team Efficiency</div><div class="number">{{stats.teamEfficiency}}</div></div>
+        <div class="card stat"><div class="label">Upcoming Practice</div><div class="number">{{stats.upcomingPractice}}</div></div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="panel"><h2>Team Performance Metrics</h2><div class="radar-wrap"><svg width="430" height="390" viewBox="0 0 430 390"><g transform="translate(215,195)"><polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75" fill="none" stroke="#ddd"/><polygon points="0,-100 87,-50 87,50 0,100 -87,50 -87,-50" fill="none" stroke="#e6e6e6"/><polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="none" stroke="#e6e6e6"/><line x1="0" y1="0" x2="0" y2="-150" stroke="#ddd"/><line x1="0" y1="0" x2="130" y2="-75" stroke="#ddd"/><line x1="0" y1="0" x2="130" y2="75" stroke="#ddd"/><line x1="0" y1="0" x2="0" y2="150" stroke="#ddd"/><line x1="0" y1="0" x2="-130" y2="75" stroke="#ddd"/><line x1="0" y1="0" x2="-130" y2="-75" stroke="#ddd"/><polygon points="0,-122 96,-55 99,70 0,120 -107,66 -99,-65" fill="#990000" opacity="0.58" stroke="#990000" stroke-width="2"/><text x="0" y="-160" text-anchor="middle" fill="#777" font-size="16">Shooting</text><text x="140" y="-78" fill="#777" font-size="16">Defense</text><text x="140" y="82" fill="#777" font-size="16">Rebounds</text><text x="0" y="170" text-anchor="middle" fill="#777" font-size="16">Assists</text><text x="-175" y="82" fill="#777" font-size="16">Speed</text><text x="-180" y="-78" fill="#777" font-size="16">Stamina</text></g></svg></div></div>
+        <div class="panel analysis"><h2>↗ Team Analysis</h2><p><b>Strengths:</b> The team shows exceptional shooting accuracy (85%) and speed metrics. Defense coordination has improved by 12% over the last month.</p><p><b>Areas for Improvement:</b> Assist rates need attention. Consider drills focused on passing and court awareness.</p><p><b>Recommendation:</b> Increase intensity in defensive drills and add dedicated assist training sessions.</p><button class="primary">Create Training Plan</button></div>
+      </div>
+    </section>
+    <section class="content" *ngIf="page==='players'">
+      <h1 class="title">Player Roster</h1><p class="subtitle">Manage your team and track individual player performance</p>
+      <div class="filters"><select><option>All Status</option></select><select><option>All Positions</option></select><select><option>All Selections</option></select></div>
+      <div class="players"><div class="player-card" *ngFor="let p of players"><div class="avatar">♙</div><h3>{{p.name}}</h3><div class="pos">{{p.position}}</div><span class="badge" [class.active-badge]="p.status==='Active'" [class.injured-badge]="p.status==='Injured'">{{p.status}}</span></div></div>
+    </section>
+  </main>
+</div>
+
+<app-players></app-players>

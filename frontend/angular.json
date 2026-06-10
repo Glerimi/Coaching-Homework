@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "projects": {
+    "basketball-analytics": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/basketball-analytics",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "styles": [
+              "src/styles.css"
+            ]
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "basketball-analytics:build"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "basketball-analytics",
+  "cli": {
+    "analytics": "9cf226eb-142d-4f0e-8800-083b35da9695"
+  }
+}
