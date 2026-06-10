@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://DEINE-HEROKU-APP.herokuapp.com/api'
+    apiUrl: 'https://coaching-homework.onrender.com'
 };

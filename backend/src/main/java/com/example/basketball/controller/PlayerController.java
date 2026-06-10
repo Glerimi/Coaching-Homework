@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/api/db/players")
 @CrossOrigin(origins = {
         "http://localhost:4200",
-        "https://DEINE-NETLIFY-SEITE.netlify.app"
+        "https://coaching-homework.onrender.com"
 })
 public class PlayerController {
     private final PlayerService playerService;
